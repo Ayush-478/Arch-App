@@ -1,5 +1,7 @@
 import cohere
 import json
+import ast
+import re 
 
 #importing JSON files
 with open('/home/cherry/Programs/Arch App/json/meta_schema.json', 'r') as file:
@@ -44,7 +46,10 @@ def JSONGeneration(prompt):
     )
     
     a = res.message.content[0].text
-    res_dict = json.loads(a)
+    b = re.sub(r'\s+', '', a)
+    print(b)
+    res_dict = ast.literal_eval(b)
+    print(type(res_dict))
     shape_name = (res_dict['shape'])
 
     #Generating ID for shapes.
@@ -59,6 +64,4 @@ def JSONGeneration(prompt):
     update_count()
     res_dict['id'] = shape_name + str(obj_count[shape_name])
     
-    print(res_dict)
-
-JSONGeneration("draw a triangle")
+    return res_dict

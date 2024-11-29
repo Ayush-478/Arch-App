@@ -1,4 +1,4 @@
-//4hr+
+//30min+
 
 import {
     sendrequest,
