@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="cont" id="cont">
+        <canvas id="canvas" class="canvas">
+
+        </canvas>
+    </div>
+
+    <div class="chat" id="chat">
+        <div class="button_cont">
+            <button class="chatbutton" id="chatbutton"> Chat
+            </button>
+
+            <button class="help" id="help">Help</button>
+            <button class="dev" id="dev">Contact dev</button>
+        </div>
+
+        <div class="interface_cont">
+
+            <div class="chat_interface" id="chat_interface">
+                <textarea name="" id="chat_area" class="chat_area">
+
+                </textarea>
+                <button class="submit" id="submit"> Submit
+
+                </button>
+            </div>
+
+            <div class="help_interface" id="help_interface"></div>
+
+            <div class="dev_interface" id="dev_interface"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fabric@6.4.3/dist/index.js"></script>
+    <script src="js.js" type="module"></script>
+
+</body>
+</html>

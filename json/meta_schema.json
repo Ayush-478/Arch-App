@@ -1,0 +1,57 @@
+{
+    "name" : "Schema for non-angular shapes",
+
+    "type" : "object",
+
+    "required" : ["action", "shape", "position", "dimensions", "style"],
+
+    "properties" : {
+        
+        "action": {
+            "type" : "string", 
+            "description" : "describes the action that needs to be taken (could be add/edit/delete), this property is case-sensitive",
+            "enum" : ["add", "edit", "delete"]
+        },
+
+        "id" : {
+            "type" : "string"
+        },
+        
+        "shape" : {
+            "type" : "string",
+            "description" : "Which type of shape (eg. Circle, Rectangle, etc.), this property is case-sensitive",
+            "enum" : ["Rectangle", "Circle", "Triangle"]
+        },
+
+        "position" : {
+            "type" : "object",
+            "properties" : {
+                "x" : {"type" : "number", "description" : "X-coordinate of the shape on the canvas"},
+                "y" : {"type" : "number", "description" : "Y-coordinate of the shape on the canvas"}
+            },
+            "required" : ["x", "y"],
+            "default" : {"x" : 100, "y" : 100}
+        },
+
+        "dimensions" : {
+            "type" : "object",
+            "properties" : {
+                "width" : {"type" : "number", "description" : "describes the width of the shape"},
+                "height" : {"type" : "number", "description" : "describes the height of the shape"}
+            },
+            "required" : ["width", "height"],
+            "default" : {"height" : 100, "width" : 100}
+        },
+
+        "style" : {
+            "type" : "object",
+            "properties" : {
+                "fillColor" : {"type" : "string", "description" : "The color of the shape"},
+                "strokeColor" : {"type" : "string", "description" : "the color of the outline of the shape"},
+                "lineWidth" : {"type" : "number", "description" : "the width of the outline of the shape"}            
+            },
+            "required" : ["strokeColor"],
+            "default" : {"fillColor" : "white", "strokeColor" : "black"}
+        }
+    }
+}
